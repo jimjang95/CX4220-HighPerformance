@@ -1,0 +1,15 @@
+#PBS -N hw1
+#PBS -l nodes=2:ppn=8
+#PBS -l mem=1gb
+#PBS -l walltime=00:03:00
+#PBS -q coc-ice-multi
+#PBS -o output.txt
+
+cd /nv/coc-ice/jjang70/CX4220-HighPerformance/HW1
+module load gcc mvapich2/2.2
+make
+mpirun -np 1 prog1 5000000 30
+mpirun -np 2 prog1 5000000 30
+mpirun -np 4 prog1 5000000 30
+mpirun -np 8 prog1 5000000 30
+mpirun -np 16 prog1 5000000 30
