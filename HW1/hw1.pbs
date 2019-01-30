@@ -5,7 +5,7 @@
 #PBS -q coc-ice-multi
 #PBS -o output.txt
 
-cd /nv/coc-ice/jjang70/CX4220-HighPerformance/HW1
+cd ~/CX4220-HighPerformance/HW1
 module load gcc mvapich2/2.2
 make
 mpirun -np 1 prog1 5000000 30
