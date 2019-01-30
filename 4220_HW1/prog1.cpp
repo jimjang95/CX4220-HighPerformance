@@ -1,9 +1,7 @@
 #include <iostream>
 #include <mpi.h>
-#include <cstdlib>
 #include <cmath>
 #include <string>
-// #include <fstream>
 
 int dboard(int N);
 
@@ -21,9 +19,6 @@ int main(int argc, char *argv[])
     int rank;
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     std::srand(rank); // seed here
-    // printf("[RAND CHECK] 1");
-    // printf("Rank %d/%d: ", rank, worldSize);
-    // printf("%d, %d, %d\n", std::rand(), std::rand(), std::rand());
 
     int N; // ready to receive from Master
     int R; // ready to receive from Master
@@ -32,41 +27,49 @@ int main(int argc, char *argv[])
     // Step 1: read / broadcast 'N'
     if (rank == 0) {
         // MASTER
-        N = atoi(argv[1]);
-        // R = atoi(argv[2]);
+        // init checks
+        if (argc != 3) {
+            std::cerr << "Not enough arguments\n";
+            MPI_Abort(MPI_COMM_WORLD, 1);
+            MPI_Finalize();
+            return 1;
+        }
+        N = std::stoi(argv[1]);
+        R = std::stoi(argv[2]);
+
+        // init checks
+        if (N < 5000000) {
+            std::cerr << "N is an invalid value. Input 5000000 < N.\n";
+            MPI_Abort(MPI_COMM_WORLD, 2);
+            MPI_Finalize();
+            return 2;
+        }
+        if (R > 100 || R < 1) {
+            std::cerr << "R is an invalid value. Input 0 < R < 100.\n";
+            MPI_Abort(MPI_COMM_WORLD, 2);
+            MPI_Finalize();
+            return 2;
+        }
     }
     MPI_Bcast(&N, 1, MPI_INT, 0, MPI_COMM_WORLD);
-    // MPI_Bcast(&R, 1, MPI_INT, 0, MPI_COMM_WORLD);
-    R = atoi(argv[2]);
-    // printf("\n");
+    MPI_Bcast(&R, 1, MPI_INT, 0, MPI_COMM_WORLD);
 
     int part;
     int total;
     for (int i = 0; i < R; i++) {
         // Step 2: everyone does dboard
-        // printf("Rank %d/%d: ", rank, worldSize);
-        // printf("N: %d , N/worldSize: %d\n", N, N / worldSize);
         part = dboard(N / worldSize);
-        // double part = (double)M / N;
-        // printf("Rank %d/%d: Sending in %d shots.\n", rank, worldSize, part);
 
         // Step 3: add together all the dboard values.
-        // MPI_Barrier(MPI_COMM_WORLD);
         MPI_Reduce(&part, &total, 1, MPI_INT, MPI_SUM, 0, MPI_COMM_WORLD);
         if (rank == 0) {
             pi += (double)N * 2 / total;
-            // printf("pi: %f\n", pi);
         }
-        // printf("Rank %d/%d: ", rank, worldSize);
-        // printf("total, pi = %d, %f.\n", total, pi);
     }
 
     if (rank == 0) {
-        // printf("pi, R = %f, %d.\n", pi, R);
         pi = pi / R;
         time += MPI_Wtime();
-        // printf("Rank %d/%d: ", rank, worldSize);
-        // printf("pi = %f.\n", pi);
         std::string output = "";
         output += "N= ";
         output += std::to_string(N);
@@ -105,11 +108,6 @@ int dboard(int N) {
         if(std::abs(a * std::sin(theta)) <= square \
             && std::abs(a * std::cos(theta)) <= square)
         {
-            // std::cout << "a: " << a << '\n';
-            // std::cout << "a sin: " << std::abs(a * std::sin(theta)) << '\n';
-            // std::cout << "a cos: " << std::abs(a * std::cos(theta)) << '\n';
-            // std::cout << "square: " << square << '\n';
-
             M += 1;
         }
     }
