@@ -1,4 +1,4 @@
-#PBS -N baseline
+#PBS -N processor num test
 #PBS -l nodes=2:ppn=8
 #PBS -l walltime=50:00
 #PBS -q coc-ice

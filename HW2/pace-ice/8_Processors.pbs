@@ -8,6 +8,8 @@
 cd $PBS_O_WORKDIR
 module load gcc mvapich2/2.2
 
+make
+
 mpirun -np 8 ./nqueen 1 0 >> TIME_8Proc.txt
 mpirun -np 8 ./nqueen 2 0 >> TIME_8Proc.txt
 mpirun -np 8 ./nqueen 3 0 >> TIME_8Proc.txt
