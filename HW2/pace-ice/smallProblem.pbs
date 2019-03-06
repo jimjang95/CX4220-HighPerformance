@@ -1,4 +1,4 @@
-#PBS -N 8_processors
+#PBS -N 4_processors
 #PBS -l nodes=1:ppn=4
 #PBS -l walltime=30:00
 #PBS -q coc-ice
