@@ -96,12 +96,15 @@ void nqueen_master(unsigned int n,
         MPI_Send(&kill, 1, MPI_INT, status.MPI_SOURCE, 4, MPI_COMM_WORLD);
         finalCheck[status.MPI_SOURCE] = true;
         shouldContinue = false;
+        std::cout << "Current final status :";
         for (unsigned int i = 0; i < finalCheck.size(); i++) {
+          std::cout << finalCheck[i] << " ";
           if (finalCheck[i] == false) {
             shouldContinue = true;
             break;
           }
         }
+        std::cout << std::endl;
       }
       // There are still some jobs remaining
       else {
