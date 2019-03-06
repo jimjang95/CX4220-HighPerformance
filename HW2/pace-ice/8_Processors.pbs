@@ -1,0 +1,182 @@
+#PBS -N 8_processors
+#PBS -l nodes=2:ppn=8
+#PBS -l walltime=30:00
+#PBS -q coc-ice-multi
+#PBS -o $PBS_JOBID.out
+#PBS -e $PBS_JOBID.err
+
+cd $PBS_O_WORKDIR
+module load gcc mvapich2/2.2
+make clean
+make
+
+mpirun -np 8 ./nqueen 1 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 2 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 3 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 4 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 5 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 6 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 7 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 8 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 9 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 10 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 11 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 12 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 13 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 14 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 15 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 16 0 >> TIME_8Proc.txt
+
+mpirun -np 8 ./nqueen 1 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 2 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 3 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 4 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 5 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 6 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 7 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 8 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 9 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 10 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 11 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 12 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 13 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 14 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 15 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 16 0 >> TIME_8Proc.txt
+
+mpirun -np 8 ./nqueen 1 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 2 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 3 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 4 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 5 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 6 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 7 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 8 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 9 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 10 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 11 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 12 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 13 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 14 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 15 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 16 0 >> TIME_8Proc.txt
+
+mpirun -np 8 ./nqueen 1 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 2 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 3 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 4 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 5 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 6 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 7 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 8 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 9 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 10 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 11 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 12 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 13 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 14 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 15 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 16 0 >> TIME_8Proc.txt
+
+mpirun -np 8 ./nqueen 1 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 2 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 3 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 4 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 5 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 6 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 7 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 8 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 9 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 10 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 11 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 12 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 13 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 14 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 15 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 16 0 >> TIME_8Proc.txt
+
+mpirun -np 8 ./nqueen 1 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 2 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 3 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 4 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 5 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 6 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 7 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 8 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 9 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 10 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 11 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 12 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 13 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 14 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 15 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 16 0 >> TIME_8Proc.txt
+
+mpirun -np 8 ./nqueen 1 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 2 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 3 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 4 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 5 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 6 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 7 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 8 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 9 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 10 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 11 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 12 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 13 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 14 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 15 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 16 0 >> TIME_8Proc.txt
+
+mpirun -np 8 ./nqueen 1 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 2 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 3 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 4 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 5 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 6 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 7 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 8 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 9 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 10 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 11 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 12 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 13 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 14 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 15 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 16 0 >> TIME_8Proc.txt
+
+mpirun -np 8 ./nqueen 1 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 2 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 3 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 4 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 5 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 6 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 7 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 8 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 9 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 10 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 11 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 12 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 13 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 14 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 15 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 16 0 >> TIME_8Proc.txt
+
+mpirun -np 8 ./nqueen 1 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 2 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 3 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 4 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 5 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 6 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 7 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 8 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 9 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 10 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 11 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 12 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 13 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 14 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 15 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 16 0 >> TIME_8Proc.txt
+
