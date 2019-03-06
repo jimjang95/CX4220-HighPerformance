@@ -1,4 +1,4 @@
-#PBS -N baseline
+#PBS -N processor num test
 #PBS -l nodes=2:ppn=8
 #PBS -l walltime=50:00
 #PBS -q coc-ice
@@ -8,7 +8,6 @@
 cd $PBS_O_WORKDIR
 module load gcc mvapich2/2.2
 
-make clean
 make
 
 mpirun -np 1 ./nqueen 16 4 >> TIME_processorNum.txt
