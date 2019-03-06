@@ -6,6 +6,9 @@
 #PBS -e $PBS_JOBID.err
 
 cd ~//CX4220-HighPerformance/HW2/pace-ice
+module load gcc mvapich2/2.2
+
+make
 
 mpirun -np 16 ./nqueen 16 0 >> TIME_16proc.txt
 mpirun -np 16 ./nqueen 16 1 >> TIME_16proc.txt
@@ -24,4 +27,3 @@ mpirun -np 16 ./nqueen 16 13 >> TIME_16proc.txt
 mpirun -np 16 ./nqueen 16 14 >> TIME_16proc.txt
 mpirun -np 16 ./nqueen 16 15 >> TIME_16proc.txt
 mpirun -np 16 ./nqueen 16 16 >> TIME_16proc.txt
-s
