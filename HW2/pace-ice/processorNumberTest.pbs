@@ -1,0 +1,73 @@
+#PBS -N baseline
+#PBS -l nodes=2:ppn=8
+#PBS -l walltime=50:00
+#PBS -q coc-ice
+#PBS -o $PBS_JOBID.out
+#PBS -e $PBS_JOBID.err
+
+cd $PBS_O_WORKDIR
+module load gcc mvapich2/2.2
+
+make clean
+make
+
+mpirun -np 1 ./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 2 ./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 4 ./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 8./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 12 ./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 16 ./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 1 ./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 2 ./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 4 ./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 8./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 12 ./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 16 ./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 1 ./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 2 ./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 4 ./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 8./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 12 ./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 16 ./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 1 ./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 2 ./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 4 ./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 8./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 12 ./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 16 ./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 1 ./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 2 ./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 4 ./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 8./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 12 ./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 16 ./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 1 ./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 2 ./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 4 ./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 8./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 12 ./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 16 ./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 1 ./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 2 ./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 4 ./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 8./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 12 ./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 16 ./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 1 ./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 2 ./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 4 ./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 8./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 12 ./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 16 ./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 1 ./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 2 ./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 4 ./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 8./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 12 ./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 16 ./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 1 ./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 2 ./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 4 ./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 8./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 12 ./nqueen 16 4 >> TIME_processorNum.txt
+mpirun -np 16 ./nqueen 16 4 >> TIME_processorNum.txt
