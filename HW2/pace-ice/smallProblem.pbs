@@ -6,6 +6,7 @@
 #PBS -e $PBS_JOBID.err
 
 cd $PBS_O_WORKDIR
+module load gcc mvapich2/2.2
 
 mpirun -np 4 ./nqueen 1 0 >> TIME_4Proc.txt
 mpirun -np 4 ./nqueen 4 0 >> TIME_4Proc.txt
