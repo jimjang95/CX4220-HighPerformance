@@ -79,6 +79,8 @@ void nqueen_master(unsigned int n,
     else if (status.MPI_TAG == 999) {
       // No more jobs available
       if (queue.size() == 0) {
+        MPI_Recv(&tag_nmbr, 1, MPI_INT, status.MPI_SOURCE, MPI_ANY_TAG,
+                 MPI_COMM_WORLD, MPI_STATUS_IGNORE);
         // send kill signal (tag = 4)
         int kill = -1;
         MPI_Send(&kill, 1, MPI_INT, status.MPI_SOURCE, 4, MPI_COMM_WORLD);
