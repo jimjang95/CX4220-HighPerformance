@@ -1,0 +1,13 @@
+#PBS -N 8_processors
+#PBS -l nodes=2:ppn=8
+#PBS -l walltime=30:00
+#PBS -q coc-ice-multi
+#PBS -o $PBS_JOBID.out
+#PBS -e $PBS_JOBID.err
+
+cd $PBS_O_WORKDIR
+
+mpirun -np 8 ./nqueen 1 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 2 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 3 0 >> TIME_8Proc.txt
+mpirun -np 8 ./nqueen 4 0 >> TIME_8Proc.txt
