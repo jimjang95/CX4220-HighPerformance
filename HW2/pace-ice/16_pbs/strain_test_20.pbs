@@ -1,0 +1,13 @@
+#PBS -N strain_test(20)
+#PBS -l nodes=2:ppn=8
+#PBS -l walltime=10:00
+#PBS -q coc-ice-multi
+#PBS -o strain_test(20).out
+#PBS -e strain_test(20).err
+
+cd ~/CX4220-HighPerformance/HW2/pace-ice
+module load gcc mvapich2/2.2
+
+make
+
+mpirun -np 16 ./nqueen 20 5 >> strain20.txt
