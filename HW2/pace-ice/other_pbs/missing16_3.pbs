@@ -1,0 +1,32 @@
+#PBS -N missing16_3
+#PBS -l nodes=2:ppn=8
+#PBS -l walltime=15:00
+#PBS -q coc-ice-multi
+#PBS -o missing16_3.out
+#PBS -e missing16_3.err
+
+cd ~/CX4220-HighPerformance/HW2/pace-ice
+module load gcc mvapich2/2.2
+
+make
+
+mpirun -np 16 ./nqueen 16 11 >> missing16_3.txt
+mpirun -np 16 ./nqueen 16 14 >> missing16_3.txt
+
+15
+16
+
+12
+14
+15
+16
+
+1
+5
+6
+7
+8
+9
+10
+13
+16
