@@ -1,0 +1,16 @@
+#PBS -N p_test(1)
+#PBS -l nodes=1:ppn=4
+#PBS -l walltime=15:00
+#PBS -q coc-ice-multi
+#PBS -o p_test.out
+#PBS -e p_test.err
+
+cd ~/CX4220-HighPerformance/HW2/pace-ice
+module load gcc mvapich2/2.2
+
+make
+
+mpirun -np 1 ./nqueen 16 4 >> processorTest.txt
+mpirun -np 2 ./nqueen 16 4 >> processorTest.txt
+mpirun -np 3 ./nqueen 16 4 >> processorTest.txt
+mpirun -np 4 ./nqueen 16 4 >> processorTest.txt
