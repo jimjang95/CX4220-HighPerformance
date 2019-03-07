@@ -1,0 +1,18 @@
+#PBS -N np12_k_test(2)
+#PBS -l nodes=2:ppn=8
+#PBS -l walltime=30:00
+#PBS -q coc-ice-multi
+#PBS -o np12_k_test(1).out
+#PBS -e np12_k_test(1).err
+
+cd ~/CX4220-HighPerformance/HW2/pace-ice
+module load gcc mvapich2/2.2
+
+make
+
+mpirun -np 12 ./nqueen 12 7 >> TIME_12proc.txt
+mpirun -np 12 ./nqueen 12 8 >> TIME_12proc.txt
+mpirun -np 12 ./nqueen 12 9 >> TIME_12proc.txt
+mpirun -np 12 ./nqueen 12 10 >> TIME_12proc.txt
+mpirun -np 12 ./nqueen 12 11 >> TIME_12proc.txt
+mpirun -np 12 ./nqueen 12 12 >> TIME_12proc.txt
