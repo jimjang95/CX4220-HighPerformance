@@ -1,0 +1,16 @@
+#PBS -N np16_k_test(3)
+#PBS -l nodes=2:ppn=8
+#PBS -l walltime=30:00
+#PBS -q coc-ice-multi
+#PBS -o np16_k_test(3).out
+#PBS -e np16_k_test(3).err
+
+cd ~/CX4220-HighPerformance/HW2/pace-ice
+module load gcc mvapich2/2.2
+
+make
+
+mpirun -np 16 ./nqueen 16 9 >> TIME_16proc.txt
+mpirun -np 16 ./nqueen 16 10 >> TIME_16proc.txt
+mpirun -np 16 ./nqueen 16 11 >> TIME_16proc.txt
+mpirun -np 16 ./nqueen 16 12 >> TIME_16proc.txt
